@@ -1,0 +1,103 @@
+* {
+
+    --white: #dad7cd;
+    --g0: #a3b18a;
+    --g1: #588157;
+    --g2: #3a5a40;
+    --g3: #344e41;
+    --g4: #17241d;
+}
+
+img {
+    pointer-events: none
+  }
+
+body {
+    user-select: none;
+    /* supported by Chrome and Opera */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+
+    background-color: var(--g4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-board {
+    background-color: var(--g3);
+    width: 640px;
+    height: 680px;
+    display: grid;
+    grid: 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 8px 8px 8px;
+
+}
+
+.card {
+    color: var(--g0);
+    width: 150px;
+    height: 150px;
+    font-family: sans-serif;
+    font-size: 140px;
+    padding-top: 4px;
+    transition: .2s;
+    background-color: var(--g4);
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 4px;
+    -webkit-transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+
+.back,
+.front {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 10px;
+
+}
+
+
+.front {
+    background-color: var(--g0);
+    transform: rotateY(180deg);
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.flip {
+    padding-top: 0px;
+
+    transform: rotateY(180deg);
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 4px;
+}
